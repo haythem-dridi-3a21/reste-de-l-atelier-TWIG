@@ -19,11 +19,11 @@ class AuthorController extends AbstractController
     public function authorDetails(String $id): Response
     {
         $author = array_filter($this->authors, function ($u) use ($id) {
-            return $u['id'] = $id;
+            return $u['id'] == $id;
         });
 
         return $this->render('author/showAuthor.html.twig', [
-            'author' => $author[0],
+            'author' => reset($author),
         ]);
     }
 
