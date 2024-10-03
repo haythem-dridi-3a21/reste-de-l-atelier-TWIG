@@ -1,0 +1,22 @@
+<table border="1">
+    <tr width="10px">
+        <td>Picture</td>
+        <td><img width="200" heigth="200" src="{{ asset(author.picture) }}"></td>
+    </tr>
+    <tr width="10px">
+        <td>ID</td>
+        <td>{{ author['id']}}</td>
+    </tr>
+     <tr>
+        <td>username</td>
+        <td>{{ author['username']}}</td>
+    </tr>
+     <tr>
+        <td>email</td>
+        <td>{{ author['email']}}</td>
+    </tr>
+     <tr>
+        <td>nb_books</td>
+        <td>{{ author['nb_books']}}</td>
+    </tr>
+</table>

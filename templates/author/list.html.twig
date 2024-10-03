@@ -1,0 +1,36 @@
+{% if authors is empty %}
+    <p>Empty table</p>
+{% endif %}
+
+<h1>Nb authors :  {{ authors | length }}</h1>
+
+<h1>Nb books :  {{ nb_book_totals }}</h1>
+
+
+<table border="1" width="100%">
+<tr>
+    <td>ID</td>
+    <td>Photo</td>
+    <td>username</td>
+    <td>email</td>
+    <td>nb_books</td>
+    <td>Détails</td>
+</tr>
+{% for author in authors %}
+    <tr> 
+    
+        <td>{{ author.id }}</td>
+
+        <td><img width="50" heigth="50" src="{{ asset(author.picture) }}"></td>
+
+        <td>{{ author.username | upper }}</td>
+
+        <td>{{ author.email}}</td>
+
+        <td>{{ author.nb_books}}</td>
+
+        <td><a href="{{ path('show_author',{'id':author.id}) }}">Détails</a></td>
+
+    </tr>
+{% endfor %}
+</table>
