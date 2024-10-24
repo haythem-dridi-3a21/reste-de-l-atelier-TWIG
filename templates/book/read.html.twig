@@ -1,0 +1,22 @@
+{# {{ dump(books) }} #}
+
+<table border="1">
+    <tr>
+        <td>ID</td>
+        <td>title</td>
+        <td>publicationDate</td>
+        <td>enabled</td>
+        <td>Author Username</td>
+    </tr>
+
+    {% for book in books %}
+        <tr>
+            <td>{{ book.id }}</td>
+            <td>{{ book.title }}</td>
+            <td>{{ book.publicationDate | date('y-m-dd') }}</td>
+            <td>{{ book.enabled }}</td>
+            <td>{{ book.author.username }}</td>
+        </tr>
+    {% endfor %}
+    
+</table>
